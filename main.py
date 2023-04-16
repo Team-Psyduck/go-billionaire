@@ -1,9 +1,9 @@
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtAxContainer import QAxWidget
+from PySide2.QtWidgets import QApplication, QMainWindow
+from PySide2.QtAxContainer import QAxWidget
 from view import Ui_Dialog
 
 
-class MainWindow(QMainWindow, Ui_Dialog):
+class MainWindow(QMainWindow, Ui_Dialog, QAxWidget):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     app = QApplication()
     window = MainWindow()
     window.show()
-    app.exec()
+    app.exec_()
