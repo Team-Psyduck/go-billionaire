@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Form generated from reading UI file 'gobillionaireCOsWCI.ui'
+# Form generated from reading UI file 'gobillionaireOhAEoV.ui'
 ##
 # Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -32,23 +32,25 @@ class Ui_Dialog(object):
         self.accountList.setObjectName(u"accountList")
         self.accountList.setEnabled(True)
         self.accountList.setGeometry(QRect(20, 20, 161, 22))
-        self.pwdInput = QLineEdit(self.asset_tab)
-        self.pwdInput.setObjectName(u"pwdInput")
-        self.pwdInput.setGeometry(QRect(190, 20, 61, 20))
-        self.pwdInput.setInputMask(u"")
-        self.pwdInput.setValidator(QIntValidator())  # 숫자만 입력할 수 있도록 설정
-        self.pwdInput.setMaxLength(4)
-        self.pwdInput.setFrame(True)
-        self.pwdInput.setEchoMode(QLineEdit.Password)
         self.pwdButton = QPushButton(self.asset_tab)
         self.pwdButton.setObjectName(u"pwdButton")
-        self.pwdButton.setGeometry(QRect(260, 20, 31, 21))
-        self.label = QLabel(self.asset_tab)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(310, 25, 56, 12))
+        self.pwdButton.setGeometry(QRect(190, 20, 41, 21))
+        self.depositLabel = QLabel(self.asset_tab)
+        self.depositLabel.setObjectName(u"depositLabel")
+        self.depositLabel.setGeometry(QRect(310, 25, 56, 12))
         self.assetView = QTableView(self.asset_tab)
         self.assetView.setObjectName(u"assetView")
         self.assetView.setGeometry(QRect(20, 60, 571, 341))
+        self.depositLabel_2 = QLabel(self.asset_tab)
+        self.depositLabel_2.setObjectName(u"depositLabel_2")
+        self.depositLabel_2.setGeometry(QRect(375, 25, 80, 12))
+        self.depositLabel_2.setAlignment(
+            Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
+        self.depositLabel_3 = QLabel(self.asset_tab)
+        self.depositLabel_3.setObjectName(u"depositLabel_3")
+        self.depositLabel_3.setGeometry(QRect(460, 25, 21, 12))
+        self.depositLabel_3.setAlignment(
+            Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
         self.tabWidget.addTab(self.asset_tab, "")
         self.auto_tab = QWidget()
         self.auto_tab.setObjectName(u"auto_tab")
@@ -75,12 +77,14 @@ class Ui_Dialog(object):
             QCoreApplication.translate("Dialog", u"Dialog", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(
             self.strategy_tab), QCoreApplication.translate("Dialog", u"\uc804\ub7b5\uc870\ud68c", None))
-        self.pwdInput.setPlaceholderText(QCoreApplication.translate(
-            "Dialog", u"\ube44\ubc00\ubc88\ud638", None))
-        self.pwdButton.setText(
-            QCoreApplication.translate("Dialog", u"OK", None))
-        self.label.setText(QCoreApplication.translate(
+        self.pwdButton.setText(QCoreApplication.translate(
+            "Dialog", u"\uc870\ud68c", None))
+        self.depositLabel.setText(QCoreApplication.translate(
             "Dialog", u"\ubcf4\uc720 \uae08\uc561: ", None))
+        self.depositLabel_2.setText(
+            QCoreApplication.translate("Dialog", u"1,000,000,000", None))
+        self.depositLabel_3.setText(
+            QCoreApplication.translate("Dialog", u"\uc6d0", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(
             self.asset_tab), QCoreApplication.translate("Dialog", u"\uc790\uc0b0\uc870\ud68c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(

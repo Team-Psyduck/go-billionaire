@@ -12,7 +12,6 @@ class MainWindow(QMainWindow, Ui_Dialog, QAxWidget):
 
         self.kiwoom = Kiwoom()
 
-        # self.kiwoom = QAxWidget("KHOPENAPI.KHOpenAPICtrl.1")
         self.loginButton.clicked.connect(self.login)
         self.kiwoom.ocx.OnEventConnect.connect(self.event_connect)
         self.pwdButton.clicked.connect(self.getAccountData)
@@ -38,19 +37,24 @@ class MainWindow(QMainWindow, Ui_Dialog, QAxWidget):
         account_numbers = kiwoom.GetLoginInfo("ACCNO")
         self.accountList.addItems(account_numbers)
 
+        self.kiwoom.ocx.dynamicCall(
+            "KOA_Functions(QString, QString)", "ShowAccountWindow", "")
+
     def getAccountData(self):
         kiwoom = self.kiwoom
         print(self.accountList.currentText())
-        print(len(self.pwdInput.text()))
-        kiwoom.SetInputValue("계좌번호", self.accountList.currentText())
-        # kiwoom.SetInputValue("비밀번호", self.pwdInput.text())
-        kiwoom.SetInputValue("비밀번호입력매체구분", "00")
-        kiwoom.SetInputValue("조회구분", "1")
-        kiwoom.CommRqData("opw00004_req", "opw00004", 0, "2000")
 
         # 예수금 정보 출력하기
-        deposit = kiwoom.GetCommData("opw00004", "", "d+2추정예수금", 0)
-        print(f"예수금: {deposit}")
+        df = kiwoom.block_request("opw00001",
+                                  계좌번호=self.accountList.currentText(),
+                                  비밀번호="",
+                                  비밀번호입력매체구분="00",
+                                  조회구분=2,
+                                  output="예수금상세현황",
+                                  next=0)
+
+        deposit = int(df['예수금'][0])
+        self.depositLabel_2.setText(f'{deposit:,}')
 
 
 if __name__ == "__main__":
