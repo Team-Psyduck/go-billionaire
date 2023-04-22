@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Form generated from reading UI file 'gobillionaireOhAEoV.ui'
+# Form generated from reading UI file 'gobillionaireITfFSq.ui'
 ##
 # Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -38,9 +38,23 @@ class Ui_Dialog(object):
         self.depositLabel = QLabel(self.asset_tab)
         self.depositLabel.setObjectName(u"depositLabel")
         self.depositLabel.setGeometry(QRect(310, 25, 56, 12))
-        self.assetView = QTableView(self.asset_tab)
-        self.assetView.setObjectName(u"assetView")
-        self.assetView.setGeometry(QRect(20, 60, 571, 341))
+        self.assetTable = QTableWidget(self.asset_tab)
+        if (self.assetTable.columnCount() < 5):
+            self.assetTable.setColumnCount(5)
+        if (self.assetTable.rowCount() < 10):
+            self.assetTable.setRowCount(10)
+        self.assetTable.setObjectName(u"assetTable")
+        self.assetTable.setGeometry(QRect(22, 63, 569, 335))
+        self.assetTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.assetTable.setShowGrid(True)
+        self.assetTable.setWordWrap(True)
+        self.assetTable.setCornerButtonEnabled(True)
+        self.assetTable.setRowCount(10)
+        self.assetTable.setColumnCount(5)
+        self.assetTable.horizontalHeader().setMinimumSectionSize(109)
+        self.assetTable.horizontalHeader().setDefaultSectionSize(109)
+        self.assetTable.verticalHeader().setMinimumSectionSize(31)
+        self.assetTable.verticalHeader().setDefaultSectionSize(31)
         self.depositLabel_2 = QLabel(self.asset_tab)
         self.depositLabel_2.setObjectName(u"depositLabel_2")
         self.depositLabel_2.setGeometry(QRect(375, 25, 80, 12))
